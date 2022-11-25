@@ -1,4 +1,6 @@
 import "./App.css";
+import Navbar from "./navbar";
+import Home from "./home";
 
 function App() {
   const title = "Welcome to Home";
@@ -8,12 +10,9 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <div className="content">
-        <h1>
-          {title} {person.name}
-        </h1>
-        <p>Liked {likes}</p>
-        <a href={link}>Google</a>
+       <Home/>
       </div>
     </div>
   );
