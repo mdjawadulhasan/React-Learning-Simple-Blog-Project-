@@ -3,6 +3,7 @@ import BlogList from "./BlogList";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
+  const [isPending, setIsPending] = useState(true);
 
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id != id);
@@ -16,15 +17,25 @@ const Home = () => {
       })
       .then((data) => {
         setBlogs(data);
+        setIsPending(false);
       });
   }, []);
 
   return (
     <div className="home">
-     {blogs &&  <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
-     //if its null then wont print anything
-    }
-     </div>
+      {isPending && <div>Loading...</div>}
+
+      {
+        blogs && (
+          <BlogList
+            blogs={blogs}
+            title="All Blogs"
+            handleDelete={handleDelete}
+          />
+        )
+        //if its null then wont print anything
+      }
+    </div>
   );
 };
 
