@@ -1,7 +1,6 @@
-import "./App.css";
 import Navbar from "./navbar";
 import Home from "./home";
-
+ 
 function App() {
   const title = "Welcome to Home";
   const likes = 50;
@@ -12,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
-       <Home/>
+        <Home />
       </div>
     </div>
   );
