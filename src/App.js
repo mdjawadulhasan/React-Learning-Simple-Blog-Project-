@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const title = "Welcome to Home";
+  const likes = 50;
+  const person = { name: "Ishan", age: "22" };
+  const link = "https://www.google.com/";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <h1>
+          {title} {person.name}
+        </h1>
+        <p>Liked {likes}</p>
+        <a href={link}>Google</a>
+      </div>
     </div>
   );
 }
