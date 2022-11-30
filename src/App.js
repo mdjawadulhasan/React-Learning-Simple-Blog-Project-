@@ -1,19 +1,25 @@
 import Navbar from "./navbar";
 import Home from "./home";
- 
-function App() {
-  const title = "Welcome to Home";
-  const likes = 50;
-  const person = { name: "Ishan", age: "22" };
-  const link = "https://www.google.com/";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Create from "./Create";
 
+function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
